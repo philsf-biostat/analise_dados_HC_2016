@@ -6,7 +6,7 @@
 *-Ex.R
 
 # RStudio files
-.Rproj.user/
+.Rproj.user
 
 # produced vignettes
 vignettes/*.html
@@ -15,3 +15,4 @@ vignettes/*.pdf
 ## Emacs temp files (philsf)
 **/auto/
 *~
+
