@@ -13,9 +13,9 @@ par(mfrow = c(1,1))
 boxplot(ptn, main = "Proteína total", ylab = "unidade")
 
 ## histogramas 
-hist(dados_num$Idade, main = "Idade", ylab = "Anos")
-hist(dados_num$Tempo, main = "Tempo de garrote", ylab = "minutos")
-hist(ptn, main = "Proteína total", ylab = "unidade")
+hist(dados_num$Idade, main = "Idade", ylab = "Frequencia", xlab = "Idade (anos)")
+hist(dados_num$Tempo, main = "Tempo de garrote", ylab = "Frequencia", xlab = "Minutos")
+hist(ptn, main = "Proteína total", ylab = "Frequencia", xlab = "Albumina + Globulina (unidade)")
 
 ## Gráficos por desfecho ####
 dados_fat <- read.table("dataset/dadosfat.dat")
