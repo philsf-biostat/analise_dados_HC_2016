@@ -1,0 +1,38 @@
+---
+title: "Relatório Hugo Cobra (INTO 2016)"
+author: "Felipe Figueiredo"
+date: "February 17, 2016"
+output: html_document
+---
+
+```{r, echo=FALSE}
+# set pander table-layout options
+library(pander)
+# panderOptions('table.alignment.default', function(df)
+#     ifelse(sapply(df, is.numeric), 'right', 'left'))
+panderOptions('table.split.table', Inf)
+panderOptions('table.split.cells', Inf)
+# panderOptions('table.style', 'grid')
+# panderOptions('table.emphasize.rownames',FALSE)
+# panderOptions('digits', 5)
+panderOptions('keep.trailing.zeros', TRUE)
+```
+
+## Dados numéricos
+
+```{r, results='asis', echo=FALSE}
+desc_num <- read.table(file = "../resultados/descritivas_num.dat")
+# knitr::kable(desc_num)
+pander(desc_num)
+```
+
+A média (DP) das idades é `r desc_num[1,2]`
+
+## Dados categóricos
+
+```{r, results='asis', echo=FALSE}
+desc_fat <- read.table(file = "../resultados/descritivas_fat.dat")
+#pander(desc_fat)
+dados_fat <- read.table("../dataset/dadosfat.dat")
+pander(summary(dados_fat))
+```
