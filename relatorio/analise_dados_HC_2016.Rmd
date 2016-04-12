@@ -34,7 +34,7 @@ desc_num <- read.table(file = "../resultados/descritivas_num.dat")
 pander(desc_num)
 ```
 
-A média (DP) das idades é `r desc_num[1,2]`
+A média (DP) das idades é `r paste0(desc_num[1,1], " (", desc_num[1,2],")")`
 
 ## Dados categóricos
 
