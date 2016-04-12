@@ -23,25 +23,25 @@ counts <- table(ASA, Desfecho); barplot(counts, legend=rownames(counts), beside 
 # Desfecho por sexo
 sexo_desfecho <- table(Sexo, Desfecho)
 round(prop.table(sexo_desfecho)*100, digits = 1)
-#chisq.test(sexo_desfecho)
+chisq.test(sexo_desfecho)
 fisher.test(sexo_desfecho)
 
 # Desfecho por ASA
 asa_desfecho <- table(ASA, Desfecho)
 round(prop.table(asa_desfecho)*100, digits = 1)
-#chisq.test(asa_desfecho)
+chisq.test(asa_desfecho)
 fisher.test(asa_desfecho)
 
 # Desfecho por diabete
 dm_desfecho <- table(DM, Desfecho)
 round(prop.table(dm_desfecho)*100, digits = 1)
-#chisq.test(dm_desfecho)
+chisq.test(dm_desfecho)
 fisher.test(dm_desfecho)
 
 # Desfecho por diagnostico
 diag_desfecho <- table(Diagnóstico, Desfecho)
 round(prop.table(diag_desfecho)*100, digits = 1)
-#chisq.test(diag_desfecho)
+chisq.test(diag_desfecho)
 fisher.test(diag_desfecho)
 
 # Desfecho por tratamento
