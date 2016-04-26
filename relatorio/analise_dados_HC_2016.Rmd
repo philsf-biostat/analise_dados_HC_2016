@@ -2,9 +2,13 @@
 title: "Relatório Hugo Cobra (INTO 2016)"
 author: "Felipe Figueiredo"
 date: "February 17, 2016"
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+  word_document:
     toc: yes
 ---
 
