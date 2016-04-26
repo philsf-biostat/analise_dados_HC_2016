@@ -28,7 +28,7 @@ Foi aplicado o teste de normalidade de Shapiro-Wilks nas variáveis numéricas. 
 
 ## Dados numéricos
 
-```{r, results='asis', echo=FALSE}
+```{r desc_num, results='asis', echo=FALSE}
 desc_num <- read.table(file = "../resultados/descritivas_num.dat")
 # knitr::kable(desc_num)
 pander(desc_num)
@@ -38,9 +38,27 @@ A média (DP) das idades é `r paste0(desc_num[1,1], " (", desc_num[1,2],")")`
 
 ## Dados categóricos
 
-```{r, results='asis', echo=FALSE}
+```{r desc_fat, results='asis', echo=FALSE}
 desc_fat <- read.table(file = "../resultados/descritivas_fat.dat")
 #pander(desc_fat)
 dados_fat <- read.table("../dataset/dadosfat.dat")
 pander(summary(dados_fat))
 ```
+
+```{r dados, echo = F}
+
+dados_num <- read.table("../dataset/dadosnum.dat")
+ptn <- dados_num$Albumina + dados_num$Globulina
+dados_fat <- read.table("../dataset/dadosfat.dat")
+attach(dados_num)
+attach(dados_fat)
+```
+
+
+### Desfecho por ASA
+
+```{r ASA, echo = F}
+asa_atb <- table(ATB, ASA)
+pander(t(round(prop.table(asa_atb)*100, digits = 1)))
+```
+
