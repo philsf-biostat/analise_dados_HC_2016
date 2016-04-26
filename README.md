@@ -34,6 +34,12 @@ Sumário das estatísticas descritivas das variáveis.
 [descricao.txt]: resultados/descricoes.md
 [download-desc-txt]: resultados/descricoes.txt
 
+### Tabelas de contingência ###
+
+- [Tabelas TXT][]
+
+[Tabelas TXT]: resultados/tc.txt
+
 ### Teste de normalidade ###
 
 p-valores do teste de normalidade das variáveis numéricas
