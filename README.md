@@ -37,17 +37,29 @@ Sumário das estatísticas descritivas das variáveis.
 ### Tabelas de contingência ###
 
 - [Tabelas TXT][]
+- [Independência][]
 
 [Tabelas TXT]: resultados/tc.txt
+[Independência]: resultados/diferencas-tc.md
 
 ### Teste de normalidade ###
 
 p-valores do teste de normalidade das variáveis numéricas
 
-* ~~[normalidade.txt][] ([download][download-norm-txt])~~
+- [normalidade][] ([download][download-norm-txt])
 
-[normalidade.txt]: resultados/normalidade.md
+[normalidade]: resultados/normalidade.md
 [download-norm-txt]: resultados/normalidade.txt
+
+### Testes de significância ###
+
+- [Significância por desfecho][] ([download][download-dif-desf-txt])
+- [Significância por tratamento][] ([download][download-dif-trat-txt])
+
+[Significância por desfecho]: resultados/diferencas-desfecho.md
+[download-dif-desf-txt]: resultados/diferencas-desfecho.txt
+[Significância por tratamento]: resultados/diferencas-tratamento.md
+[download-dif-trat-txt]: resultados/diferencas-tratamento.txt
 
 ### Figuras ###
 
