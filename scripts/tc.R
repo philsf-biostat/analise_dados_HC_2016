@@ -39,7 +39,6 @@ fisher.test(atb_desfecho)
 
 # ASA por tratamento
 asa_atb <- table(ATB, ASA)
-# t(asa_atb)
 t(round(prop.table(asa_atb)*100, digits = 1))
 fisher.test(asa_atb)
 # chisq.test(asa_atb)
