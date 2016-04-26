@@ -55,16 +55,8 @@ barplot(dm_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecç�
 barplot(sexo_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Sexo")
 barplot(asa_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por ASA")
 
-## Gráficos de categóricas
-# counts <- table(Sexo, Desfecho); barplot(round(prop.table(counts)*100, digits = 1), beside = T, legend = rownames(counts) , main = "Desfecho por sexo")
-# counts <- table(Desfecho, ATB); barplot(round(prop.table(counts)*100, digits = 1), beside = T, legend = rownames(counts) , main = "ATB por desfecho")
-
-# counts <- table(Sexo, ATB); barplot(round(prop.table(counts)*100, digits = 1), beside = T, legend = rownames(counts) , main = "ATB por sexo")
-
-## Rascunho ####
-# par(mfrow = c(2,2))
-# counts <- table(Desfecho, ASA); barplot(counts, legend=rownames(counts), beside = T, main = "ASA por desfecho")
-# counts <- table(ASA, Desfecho); barplot(counts, legend=rownames(counts), beside = T, main = "Desfecho por ASA")
-# counts <- table(Desfecho, ASA); barplot(counts, legend=rownames(counts), beside = F, main = "ASA por desfecho")
-# counts <- table(ASA, Desfecho); barplot(counts, legend=rownames(counts), beside = F, main = "Desfecho por ASA")
-
+## limpar dados ####
+dev.off()
+detach(dados_num)
+detach(dados_fat)
+rm(dados_num, dados_fat, ptn)
