@@ -43,9 +43,18 @@ wilcox.test(Tempo ~ Desfecho)
 wilcox.test(ptn ~ Desfecho)
 
 ## Numéricas por tratamento ####
+# Teste de significância de Wilcoxon
+
+## Idade por tratamento
 wilcox.test(Idade ~ ATB)
+
+## IMC por tratamento
 wilcox.test(IMC ~ ATB)
+
+## Tempo de garrote por tratamento
 wilcox.test(Tempo ~ ATB)
+
+## Proteína total por tratamento
 wilcox.test(ptn ~ ATB)
 
 ## Categóricas por desfecho
