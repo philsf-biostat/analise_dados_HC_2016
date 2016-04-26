@@ -57,16 +57,44 @@ wilcox.test(Tempo ~ ATB)
 ## Proteína total por tratamento
 wilcox.test(ptn ~ ATB)
 
-## Categóricas por desfecho
+## Categóricas por desfecho (Fischer)####
+
+# Testes de independência
+
+## Desfecho por sexo
 fisher.test(sexo_desfecho)
-# chisq.test(sexo_desfecho)
+
+## Desfecho por ASA
 fisher.test(asa_desfecho)
-# chisq.test(asa_desfecho)
+
+## Desfecho por diabete
 fisher.test(dm_desfecho)
-# chisq.test(dm_desfecho)
+
+## Desfecho por diagnóstico
 fisher.test(diag_desfecho)
-# chisq.test(diag_desfecho)
+
+## Desfecho por tratamento
 fisher.test(atb_desfecho)
-# chisq.test(atb_desfecho)
+
+## ASA por tratamento
 fisher.test(asa_atb)
+
+## Categóricas por desfecho (qui-quadrado)####
+
+## Desfecho por sexo
+# chisq.test(sexo_desfecho)
+
+## Desfecho por ASA
+# chisq.test(asa_desfecho)
+
+## Desfecho por diabete
+# chisq.test(dm_desfecho)
+
+## Desfecho por diagnóstico
+# chisq.test(diag_desfecho)
+
+## Desfecho por tratamento
+# chisq.test(atb_desfecho)
+
+## ASA por tratamento
 # chisq.test(asa_atb)
