@@ -5,6 +5,28 @@ dados_fat <- read.table("dataset/dadosfat.dat")
 attach(dados_num)
 attach(dados_fat)
 
+## Normalidade ####
+
+# Teste de normalidade
+
+## Idade
+shapiro.test(Idade)
+
+## IMC
+shapiro.test(IMC)
+
+## Albumina
+shapiro.test(Albumina)
+
+## Globulina
+shapiro.test(Globulina)
+
+## Tempo de garrote
+shapiro.test(Tempo)
+
+## Proteína total
+shapiro.test(ptn)
+
 
 # Desfecho por 
 par(mfrow = c(1,1))
