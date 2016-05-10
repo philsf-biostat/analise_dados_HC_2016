@@ -180,3 +180,39 @@ barplot(sexo_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = 
 barplot(asa_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por ASA")
 ```
 
+
+## Análise de Regressão
+
+Foi feita uma análise de regressão logística, tomando como variável resposta o Desfecho (binário). Cada modelo de regressão logística simples considerou como variável preditora cada um dos seguintes dados:
+
+- Tratamento
+- Diabete
+- Sexo
+- Idade
+- IMC
+- Proteína total
+- Diagnóstico
+
+**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados. Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+
+```{r modelos de regressao, echo = F}
+modelo.desfecho.atb <- glm(Desfecho ~ ATB, family = binomial(link = "logit"))
+modelo.desfecho.diab <- glm(Desfecho ~ DM, family = binomial(link = "logit"))
+modelo.desfecho.sexo <- glm(Desfecho ~ Sexo, family = binomial(link = "logit"))
+modelo.desfecho.idade <- glm(Desfecho ~ Idade, family = binomial(link = "logit"))
+modelo.desfecho.imc <- glm(Desfecho ~ IMC, family = binomial(link = "logit"))
+modelo.desfecho.ptn <- glm(Desfecho ~ ptn, family = binomial(link = "logit"))
+modelo.desfecho.diag <- glm(Desfecho ~ Diagnóstico, family = binomial(link = "logit"))
+```
+
+```{r sumarios regressao, echo = F}
+summary(modelo.desfecho.atb)
+summary(modelo.desfecho.diab)
+summary(modelo.desfecho.sexo)
+summary(modelo.desfecho.idade)
+summary(modelo.desfecho.imc)
+summary(modelo.desfecho.ptn)
+summary(modelo.desfecho.diag)
+
+```
+
