@@ -38,7 +38,9 @@ As análises estatísticas foram feitas utilizando o software estatístico R, ve
 
 # Resultados
 
-## Dados numéricos
+## Tabelas descritivas
+
+### Dados numéricos
 
 ```{r desc_num, results='asis', echo=FALSE}
 desc_num <- read.table(file = "../resultados/descritivas_num.dat")
@@ -48,7 +50,7 @@ pander(desc_num)
 
 A média (DP) das idades é `r paste0(desc_num[1,1], " (", desc_num[1,2],")")`
 
-## Dados categóricos
+### Dados categóricos
 
 ```{r desc_fat, results='asis', echo=FALSE}
 desc_fat <- read.table(file = "../resultados/descritivas_fat.dat")
