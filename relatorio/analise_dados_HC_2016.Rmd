@@ -69,10 +69,69 @@ attach(dados_fat)
 ```
 
 
+## Tabelas de Contingência
+
+```{r contingencia, echo = F}
+## Desfecho por sexo
+sexo_desfecho <- table(Desfecho, Sexo)
+
+## Desfecho por diabete
+dm_desfecho <- table(Desfecho, DM)
+
+## Desfecho por diagnostico
+diag_desfecho <- table(Desfecho, Diagnóstico)
+
+## Desfecho por tratamento
+atb_desfecho <- table(Desfecho, ATB)
+
+## Desfecho por ASA
+asa_desfecho <- table(Desfecho, ASA)
+
+## ASA por tratamento
+asa_atb <- table(ATB, ASA)
+```
+
+As tabelas de contingência a seguir, associam duas variáveis categóricas. Nas estão representadas as categorias do Desfecho (S = infeccção e N = não infeccão). OS p-valores correspondem ao teste de Fisher.
+
+
+### Desfecho por sexo
+
+`r pander(t(round(prop.table(sexo_desfecho)*100, digits = 1)))`
+
+P-valor: `r fisher.test(sexo_desfecho)$p.value`
+
+### Desfecho por Diabete
+
+`r pander(t(round(prop.table(dm_desfecho)*100, digits = 1)))`
+
+P-valor: `r fisher.test(dm_desfecho)$p.value`
+
+### Desfecho por Diagnóstico
+
+`r pander(t(round(prop.table(diag_desfecho)*100, digits = 1)))`
+
+P-valor: `r fisher.test(diag_desfecho)$p.value`
+
+
+### Desfecho por Tratamento
+
+`r pander(t(round(prop.table(atb_desfecho)*100, digits = 1)))`
+
+P-valor: `r fisher.test(atb_desfecho)$p.value`
+
+
 ### Desfecho por ASA
 
-```{r ASA, echo = F}
-asa_atb <- table(ATB, ASA)
-pander(t(round(prop.table(asa_atb)*100, digits = 1)))
-```
+`r pander(t(round(prop.table(asa_desfecho)*100, digits = 1)))`
+
+P-valor: `r fisher.test(asa_desfecho)$p.value`
+
+
+### ASA por Tratamento
+
+Adicionalmente, foi testada a associação entre o tratamento e o escore ASA.
+
+`r pander(t(round(prop.table(asa_atb)*100, digits = 1)))`
+
+P-valor: `r fisher.test(asa_atb)$p.value`
 
