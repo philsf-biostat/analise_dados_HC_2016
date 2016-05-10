@@ -135,3 +135,48 @@ Adicionalmente, foi testada a associação entre o tratamento e o escore ASA.
 
 P-valor: `r fisher.test(asa_atb)$p.value`
 
+
+## Gráficos
+
+### Dados numéricos
+
+```{r gráficos idade, echo = F}
+#par(mfrow = c(2,2))
+boxplot(Idade ~ Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
+
+
+# boxplot(dados_num$Albumina ~ dados_fat$Desfecho, main = "Albumina", ylab = "unidade", xlab = "Desfecho")
+# boxplot(dados_num$Globulina ~ dados_fat$Desfecho, main = "Globulina", ylab = "unidade", xlab = "Desfecho")
+
+```
+
+```{r grafico tempo, echo = F}
+boxplot(Tempo ~ Desfecho, main = "Tempo de garrote", ylab = "minutos", xlab = "Desfecho")
+```
+
+```{r grafico ptn, echo = F}
+boxplot(ptn ~ Desfecho, main = "Proteína total", ylab = "unidade", xlab = "Desfecho")
+```
+
+
+### Dados categóricos
+
+#### Desfecho por tratamento
+
+```{r grafico tratamento, echo = F}
+
+barplot(atb_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), xlab = "Tratamento com ATB", main = "Desfecho por tratamento")
+
+```
+
+
+#### Outros dados, por desfecho
+
+```{r graficos categoricos, echo = F}
+par(mfrow = c(2,2))
+barplot(diag_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Diagnóstico")
+barplot(dm_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Diabete")
+barplot(sexo_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Sexo")
+barplot(asa_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por ASA")
+```
+
