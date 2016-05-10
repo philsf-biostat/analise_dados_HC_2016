@@ -165,7 +165,7 @@ boxplot(ptn ~ Desfecho, main = "Proteína total", ylab = "unidade", xlab = "Desf
 
 ```{r grafico tratamento, echo = F}
 
-barplot(atb_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), xlab = "Tratamento com ATB", main = "Desfecho por tratamento")
+barplot(atb_desfecho, beside = T, legend.text = rownames(atb_desfecho), xlab = "Tratamento com ATB", main = "Desfecho por tratamento")
 
 ```
 
@@ -174,9 +174,9 @@ barplot(atb_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecç
 
 ```{r graficos categoricos, echo = F}
 par(mfrow = c(2,2))
-barplot(diag_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Diagnóstico")
-barplot(dm_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Diabete")
-barplot(sexo_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por Sexo")
-barplot(asa_desfecho, beside = T, legend.text = c("Sem infecção", "Com infecção"), main = "Desfecho por ASA")
+barplot(diag_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diagnóstico")
+barplot(dm_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diabete")
+barplot(sexo_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Sexo")
+barplot(asa_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por ASA")
 ```
 
