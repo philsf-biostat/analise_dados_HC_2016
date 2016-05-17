@@ -7,13 +7,13 @@ attach(dados_fat)
 
 par(mfrow = c(2,2))
 title("Variáveis numéricas")
-boxplot(dados_num$Idade, main = "Idade", ylab = "Anos")
-boxplot(dados_num$Tempo, main = "Tempo de garrote", ylab = "minutos")
-boxplot(dados_num$Albumina, main = "Albumina", ylab = "unidade")
-boxplot(dados_num$Globulina, main = "Globulina", ylab = "unidade")
+boxplot(dados_num$Idade ~ ATB, main = "Idade", ylab = "Anos", xlab = "Tratamento")
+boxplot(dados_num$Tempo ~ ATB, main = "Tempo de garrote", ylab = "minutos", xlab = "Tratamento")
+boxplot(dados_num$Albumina ~ ATB, main = "Albumina", ylab = "unidade", xlab = "Tratamento")
+boxplot(dados_num$Globulina ~ ATB, main = "Globulina", ylab = "unidade", xlab = "Tratamento")
 #rm(dados_num, ptn)
 par(mfrow = c(1,1))
-boxplot(ptn, main = "Proteína total", ylab = "unidade")
+boxplot(ptn ~ ATB, main = "Proteína total", ylab = "unidade", xlab = "Tratamento")
 
 ## histogramas 
 hist(dados_num$Idade, main = "Idade", ylab = "Frequencia", xlab = "Idade (anos)")
@@ -49,11 +49,13 @@ barplot(asa_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "ASA 
 # barplot(sexo_atb, beside = T, legend.text = rownames(sexo_atb), main = "Sexo por tratamento")
 # barplot(asa_atb, beside = T, legend.text = rownames(asa_atb), main = "ASA por tratamento")
 
+png("figuras/bp-tratamento.png")
 par(mfrow = c(2,2))
 barplot(diag_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diagnostico por tratamento")
 barplot(dm_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diabete por tratamento")
 barplot(sexo_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Sexo por tratamento")
 barplot(asa_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "ASA por tratamento")
+dev.off()
 
 ## limpar dados ####
 dev.off()
