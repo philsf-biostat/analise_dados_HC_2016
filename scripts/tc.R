@@ -7,25 +7,25 @@ attach(dados_fat)
 
 # Tabelas de contingencia ####
 
-## Desfecho por sexo
-sexo_desfecho <- table(Desfecho, Sexo)
-t(sexo_desfecho)
-t(round(prop.table(sexo_desfecho)*100, digits = 1))
+## Sexo por tratamento
+sexo_atb <- table(ATB, Sexo)
+t(sexo_atb)
+t(round(prop.table(sexo_atb)*100, digits = 1))
 
-## Desfecho por ASA
-asa_desfecho <- table(Desfecho, ASA)
-t(asa_desfecho)
-t(round(prop.table(asa_desfecho)*100, digits = 1))
+## ASA por tratamento
+asa_atb <- table(ATB, ASA)
+t(asa_atb)
+t(round(prop.table(asa_atb)*100, digits = 1))
 
-## Desfecho por diabete
-dm_desfecho <- table(Desfecho, DM)
-t(dm_desfecho)
-t(round(prop.table(dm_desfecho)*100, digits = 1))
+## Diabete por tratamento
+dm_atb <- table(ATB, DM)
+t(dm_atb)
+t(round(prop.table(dm_atb)*100, digits = 1))
 
-## Desfecho por diagnostico
-diag_desfecho <- table(Desfecho, Diagnóstico)
-t(diag_desfecho)
-t(round(prop.table(diag_desfecho)*100, digits = 1))
+## Diagnostico por tratamento
+diag_atb <- table(ATB, Diagnóstico)
+t(diag_atb)
+t(round(prop.table(diag_atb)*100, digits = 1))
 
 ## Desfecho por tratamento
 atb_desfecho <- table(Desfecho, ATB)
