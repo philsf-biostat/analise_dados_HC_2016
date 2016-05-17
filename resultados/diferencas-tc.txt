@@ -2,22 +2,28 @@
 
 Fisher's Exact Test for Count Data
 
-## Desfecho por sexo
+## Sexo por tratamento
+p-value = 0.2215
+odds ratio
+   1.48747
 
-p-value = 0.1212
+## ASA por tratamento
+p-value = 0.3971
 
-## Desfecho por ASA
+## Diabete por tratamento
 
-p-value = 1
+p-value = 0.6663
 
-## Desfecho por diabete
+odds ratio
+ 0.8642756
 
-p-value = 0.6474
+## Diagnostico por tratamento
 
-## Desfecho por diagnóstico
-
-p-value = 0.6482
+p-value = 0.2037
 
 ## Desfecho por tratamento
 
 p-value = 0.4656
+
+odds ratio
+ 0.4868672
