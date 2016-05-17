@@ -65,3 +65,12 @@ p-valores do teste de normalidade das variáveis numéricas
 
 Figuras descritivas das variáveis.
 
+- [Dados numéricos por desfecho][]
+- [Dados numéricos por tratamento][]
+- [Proteína total por tratamento][]
+- [Dados categóricos por tratamento][]
+
+[Dados numéricos por desfecho]: figuras/bd-desfecho.png
+[Dados numéricos por tratamento]: figuras/bd-tratamento.png
+[Proteína total por tratamento]: figuras/ptn-tratamento.png
+[Dados categóricos por tratamento]: figuras/bp-tratamento.png
