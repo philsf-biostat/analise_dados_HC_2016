@@ -1,73 +1,19 @@
 # Tabelas de contingencia ####
 
+## Sexo por tratamento
 
-## Desfecho por sexo
-    Desfecho
+    ATB
 Sexo   N   S
-   F 229   4
-   M  50   3
+   F 133 100
+   M  25  28
 
-    Desfecho
+    ATB
 Sexo    N    S
-   F 80.1  1.4
-   M 17.5  1.0
-
-
-## Desfecho por ASA
-     Desfecho
-ASA     N   S
-  I    16   0
-  II  256   5
-  III   6   0
-
-     Desfecho
-ASA      N    S
-  I    5.7  0.0
-  II  90.5  1.8
-  III  2.1  0.0
-
-
-## Desfecho por diabete
-   Desfecho
-DM    N   S
-  N 219   5
-  S  60   2
-
-   Desfecho
-DM     N    S
-  N 76.6  1.7
-  S 21.0  0.7
-
-
-## Desfecho por diagnostico
-           Desfecho
-Diagnóstico   N   S
-     AR      48   2
-     OA     227   5
-     ON       2   0
-     Outros   2   0
-
-           Desfecho
-Diagnóstico    N    S
-     AR     16.8  0.7
-     OA     79.4  1.7
-     ON      0.7  0.0
-     Outros  0.7  0.0
-
-
-## Desfecho por tratamento
-   Desfecho
-ATB   N   S
-  N 153   5
-  S 126   2
-
-   Desfecho
-ATB    N    S
-  N 53.5  1.7
-  S 44.1  0.7
-
+   F 46.5 35.0
+   M  8.7  9.8
 
 ## ASA por tratamento
+
      ATB
 ASA     N   S
   I     8   8
@@ -80,3 +26,42 @@ ASA      N    S
   II  50.5 41.7
   III  1.8  0.4
 
+## Diabete por tratamento
+
+   ATB
+DM    N   S
+  N 122 102
+  S  36  26
+
+   ATB
+DM     N    S
+  N 42.7 35.7
+  S 12.6  9.1
+
+## Diagnostico por tratamento
+
+           ATB
+Diagnóstico   N   S
+     AR      25  25
+     OA     131 101
+     ON       0   2
+     Outros   2   0
+
+           ATB
+Diagnóstico    N    S
+     AR      8.7  8.7
+     OA     45.8 35.3
+     ON      0.0  0.7
+     Outros  0.7  0.0
+
+## Desfecho por tratamento
+
+   Desfecho
+ATB   N   S
+  N 153   5
+  S 126   2
+
+   Desfecho
+ATB    N    S
+  N 53.5  1.7
+  S 44.1  0.7
