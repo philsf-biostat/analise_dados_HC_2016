@@ -77,6 +77,7 @@ fisher.test(diag_atb)
 fisher.test(atb_desfecho)
 
 ## Categóricas por tratamento (qui-quadrado)####
+## Obs: algumas categorias tem n<5, usar Fisher!
 
 ## Sexo por tratamento
 # chisq.test(sexo_atb)
