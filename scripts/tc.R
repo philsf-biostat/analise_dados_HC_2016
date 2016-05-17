@@ -32,11 +32,6 @@ atb_desfecho <- table(Desfecho, ATB)
 t(atb_desfecho)
 t(round(prop.table(atb_desfecho)*100, digits = 1))
 
-## ASA por tratamento
-asa_atb <- table(ATB, ASA)
-t(asa_atb)
-t(round(prop.table(asa_atb)*100, digits = 1))
-
 ## limpar dados ####
 detach(dados_num)
 detach(dados_fat)
