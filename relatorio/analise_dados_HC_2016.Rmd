@@ -33,6 +33,10 @@ Ao longo do texto, as variáveis normais foram sumarizadas como média +/- desvi
 Foi aplicado o teste de normalidade de Shapiro-Wilks nas variáveis numéricas.
 A comparação das variáveis basais e finais foi feita com o teste t para variáveis normalmente distribuídas, e com o teste de Mann-Whitney para variáveis que tiveram a hipótese de normalidade rejeitada.
 Para variáveis normais, foi aplicada a correlação de Pearson, e para variáveis não normais, a correlação não paramétrica de Spearman.
+
+A fim de investigar possíveis fatores de risco para o desfecho, foram ajustados modelos de regressão logística, tendo o desfecho como variável resposta.
+A significância global de cada um destes modelos foi avaliada pelo teste de Wald.
+
 Em todas as análises, foi adotada a significância de 5%.
 As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.0 (https://www.R-project.org).
 
@@ -194,6 +198,7 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 - Diagnóstico
 
 **Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados. Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+A regressão logística foi avaliada pelo teste de Wald.
 
 ```{r modelos de regressao, echo = F}
 modelo.desfecho.atb <- glm(Desfecho ~ ATB, family = binomial(link = "logit"))
