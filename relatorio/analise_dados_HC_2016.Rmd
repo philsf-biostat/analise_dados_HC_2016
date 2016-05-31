@@ -76,45 +76,54 @@ attach(dados_fat)
 ## Tabelas de Contingência
 
 ```{r contingencia, echo = F}
-## Desfecho por sexo
-sexo_desfecho <- table(Desfecho, Sexo)
+## Sexo por tratamento
+sexo_atb <- table(ATB, Sexo)
 
-## Desfecho por diabete
-dm_desfecho <- table(Desfecho, DM)
+## Diabete por tratamento
+dm_atb <- table(ATB, DM)
 
-## Desfecho por diagnostico
-diag_desfecho <- table(Desfecho, Diagnóstico)
+## Diagnostico por tratamento
+diag_atb <- table(ATB, Diagnóstico)
+
+## ASA por tratamento
+asa_atb <- table(ATB, ASA)
 
 ## Desfecho por tratamento
 atb_desfecho <- table(Desfecho, ATB)
 
 ## Desfecho por ASA
 asa_desfecho <- table(Desfecho, ASA)
-
-## ASA por tratamento
-asa_atb <- table(ATB, ASA)
 ```
 
 As tabelas de contingência a seguir, associam duas variáveis categóricas. Nas estão representadas as categorias do Desfecho (S = infeccção e N = não infeccão). OS p-valores correspondem ao teste de Fisher.
 
 
-### Desfecho por sexo
+### Sexo por tratamento
 
-`r pander(t(round(prop.table(sexo_desfecho)*100, digits = 1)))`
+`r pander(t(round(prop.table(sexo_atb)*100, digits = 1)))`
 
-P-valor: `r fisher.test(sexo_desfecho)$p.value`
+P-valor: `r fisher.test(sexo_atb)$p.value`
 
-### Desfecho por Diabete
 
-`r pander(t(round(prop.table(dm_desfecho)*100, digits = 1)))`
+### Diabete por tratamento
 
-P-valor: `r fisher.test(dm_desfecho)$p.value`
+`r pander(t(round(prop.table(dm_atb)*100, digits = 1)))`
 
-### Desfecho por Diagnóstico
+P-valor: `r fisher.test(dm_atb)$p.value`
 
-`r pander(t(round(prop.table(diag_desfecho)*100, digits = 1)))`
 
-P-valor: `r fisher.test(diag_desfecho)$p.value`
+### Diagnostico por tratamento
+
+`r pander(t(round(prop.table(diag_atb)*100, digits = 1)))`
+
+P-valor: `r fisher.test(diag_atb)$p.value`
+
+
+### ASA por Tratamento
+
+`r pander(t(round(prop.table(asa_atb)*100, digits = 1)))`
+
+P-valor: `r fisher.test(asa_atb)$p.value`
 
 
 ### Desfecho por Tratamento
@@ -130,14 +139,6 @@ P-valor: `r fisher.test(atb_desfecho)$p.value`
 
 P-valor: `r fisher.test(asa_desfecho)$p.value`
 
-
-### ASA por Tratamento
-
-Adicionalmente, foi testada a associação entre o tratamento e o escore ASA.
-
-`r pander(t(round(prop.table(asa_atb)*100, digits = 1)))`
-
-P-valor: `r fisher.test(asa_atb)$p.value`
 
 
 ## Gráficos
