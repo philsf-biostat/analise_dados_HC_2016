@@ -147,7 +147,7 @@ P-valor: `r fisher.test(asa_desfecho)$p.value`
 
 ```{r gráficos idade, echo = F}
 #par(mfrow = c(2,2))
-boxplot(Idade ~ Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
+boxplot(dados_num$Idade ~ ATB, main = "Idade", ylab = "Anos", xlab = "Tratamento")
 
 
 # boxplot(dados_num$Albumina ~ dados_fat$Desfecho, main = "Albumina", ylab = "unidade", xlab = "Desfecho")
@@ -156,11 +156,11 @@ boxplot(Idade ~ Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
 ```
 
 ```{r grafico tempo, echo = F}
-boxplot(Tempo ~ Desfecho, main = "Tempo de garrote", ylab = "minutos", xlab = "Desfecho")
+boxplot(dados_num$Tempo ~ ATB, main = "Tempo de garrote", ylab = "minutos", xlab = "Tratamento")
 ```
 
 ```{r grafico ptn, echo = F}
-boxplot(ptn ~ Desfecho, main = "Proteína total", ylab = "unidade", xlab = "Desfecho")
+boxplot(ptn ~ ATB, main = "Proteína total", ylab = "unidade", xlab = "Tratamento")
 ```
 
 
