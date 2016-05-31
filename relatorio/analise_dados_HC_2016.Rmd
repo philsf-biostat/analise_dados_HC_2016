@@ -175,14 +175,14 @@ barplot(atb_desfecho, beside = T, legend.text = rownames(atb_desfecho), xlab = "
 ```
 
 
-#### Outros dados, por desfecho
+#### Outros dados, por tratamento
 
 ```{r graficos categoricos, echo = F}
 par(mfrow = c(2,2))
-barplot(diag_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diagnóstico")
-barplot(dm_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diabete")
-barplot(sexo_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Sexo")
-barplot(asa_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por ASA")
+barplot(diag_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diagnostico por tratamento")
+barplot(dm_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diabete por tratamento")
+barplot(sexo_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Sexo por tratamento")
+barplot(asa_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "ASA por tratamento")
 ```
 
 
