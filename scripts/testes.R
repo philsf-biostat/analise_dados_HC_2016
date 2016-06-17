@@ -27,20 +27,20 @@ shapiro.test(Tempo)
 ## Proteína total
 shapiro.test(ptn)
 
-## Numéricas por desfecho ####
+## Numéricas por tratamento ####
 # Teste de significância de Wilcoxon
 
-## Idade por desfecho
-wilcox.test(Idade ~ Desfecho)
+## Idade por tratamento
+wilcox.test(Idade ~ Tratamento)
 
-## IMC por desfecho
-wilcox.test(IMC ~ Desfecho)
+## IMC por tratamento
+wilcox.test(IMC ~ Tratamento)
 
-## Tempo de garrote por desfecho
-wilcox.test(Tempo ~ Desfecho)
+## Tempo de garrote por tratamento
+wilcox.test(Tempo ~ Tratamento)
 
-## Proteína total por desfecho
-wilcox.test(ptn ~ Desfecho)
+## Proteína total por tratamento
+wilcox.test(ptn ~ Tratamento)
 
 ## Numéricas por tratamento ####
 # Teste de significância de Wilcoxon
