@@ -55,8 +55,8 @@ p-valores do teste de normalidade das variáveis numéricas
 
 ### Testes de significância ###
 
-- [Significância por desfecho][] ([download][download-dif-desf-txt])
 - [Significância por tratamento][] ([download][download-dif-trat-txt])
+- ~~[Significância por desfecho][] ([download][download-dif-desf-txt])~~
 
 [Significância por desfecho]: resultados/diferencas-desfecho.md
 [download-dif-desf-txt]: resultados/diferencas-desfecho.txt
@@ -67,7 +67,7 @@ p-valores do teste de normalidade das variáveis numéricas
 
 Figuras descritivas das variáveis.
 
-- [Dados numéricos por desfecho][]
+- ~~[Dados numéricos por desfecho][]~~
 - [Dados numéricos por tratamento][]
 - [Proteína total por tratamento][]
 - [Dados categóricos por tratamento][]
