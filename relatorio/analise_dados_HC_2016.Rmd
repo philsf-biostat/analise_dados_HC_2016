@@ -1,7 +1,7 @@
 ---
 title: "Relatório Hugo Cobra (INTO 2016)"
 author: "Felipe Figueiredo"
-date: "February 17, 2016"
+date: "June 21, 2016"
 output:
   html_document:
     keep_md: yes
@@ -76,45 +76,54 @@ attach(dados_fat)
 ## Tabelas de Contingência
 
 ```{r contingencia, echo = F}
-## Desfecho por sexo
-sexo_desfecho <- table(Desfecho, Sexo)
+## Sexo por tratamento
+sexo_atb <- table(ATB, Sexo)
 
-## Desfecho por diabete
-dm_desfecho <- table(Desfecho, DM)
+## Diabete por tratamento
+dm_atb <- table(ATB, DM)
 
-## Desfecho por diagnostico
-diag_desfecho <- table(Desfecho, Diagnóstico)
+## Diagnostico por tratamento
+diag_atb <- table(ATB, Diagnóstico)
+
+## ASA por tratamento
+asa_atb <- table(ATB, ASA)
 
 ## Desfecho por tratamento
 atb_desfecho <- table(Desfecho, ATB)
 
 ## Desfecho por ASA
 asa_desfecho <- table(Desfecho, ASA)
-
-## ASA por tratamento
-asa_atb <- table(ATB, ASA)
 ```
 
 As tabelas de contingência a seguir, associam duas variáveis categóricas. Nas estão representadas as categorias do Desfecho (S = infeccção e N = não infeccão). OS p-valores correspondem ao teste de Fisher.
 
 
-### Desfecho por sexo
+### Sexo por tratamento
 
-`r pander(t(round(prop.table(sexo_desfecho)*100, digits = 1)))`
+`r pander(t(round(prop.table(sexo_atb)*100, digits = 1)))`
 
-P-valor: `r fisher.test(sexo_desfecho)$p.value`
+P-valor: `r fisher.test(sexo_atb)$p.value`
 
-### Desfecho por Diabete
 
-`r pander(t(round(prop.table(dm_desfecho)*100, digits = 1)))`
+### Diabete por tratamento
 
-P-valor: `r fisher.test(dm_desfecho)$p.value`
+`r pander(t(round(prop.table(dm_atb)*100, digits = 1)))`
 
-### Desfecho por Diagnóstico
+P-valor: `r fisher.test(dm_atb)$p.value`
 
-`r pander(t(round(prop.table(diag_desfecho)*100, digits = 1)))`
 
-P-valor: `r fisher.test(diag_desfecho)$p.value`
+### Diagnostico por tratamento
+
+`r pander(t(round(prop.table(diag_atb)*100, digits = 1)))`
+
+P-valor: `r fisher.test(diag_atb)$p.value`
+
+
+### ASA por Tratamento
+
+`r pander(t(round(prop.table(asa_atb)*100, digits = 1)))`
+
+P-valor: `r fisher.test(asa_atb)$p.value`
 
 
 ### Desfecho por Tratamento
@@ -131,14 +140,6 @@ P-valor: `r fisher.test(atb_desfecho)$p.value`
 P-valor: `r fisher.test(asa_desfecho)$p.value`
 
 
-### ASA por Tratamento
-
-Adicionalmente, foi testada a associação entre o tratamento e o escore ASA.
-
-`r pander(t(round(prop.table(asa_atb)*100, digits = 1)))`
-
-P-valor: `r fisher.test(asa_atb)$p.value`
-
 
 ## Gráficos
 
@@ -146,7 +147,7 @@ P-valor: `r fisher.test(asa_atb)$p.value`
 
 ```{r gráficos idade, echo = F}
 #par(mfrow = c(2,2))
-boxplot(Idade ~ Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
+boxplot(dados_num$Idade ~ ATB, main = "Idade", ylab = "Anos", xlab = "Tratamento")
 
 
 # boxplot(dados_num$Albumina ~ dados_fat$Desfecho, main = "Albumina", ylab = "unidade", xlab = "Desfecho")
@@ -155,11 +156,11 @@ boxplot(Idade ~ Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
 ```
 
 ```{r grafico tempo, echo = F}
-boxplot(Tempo ~ Desfecho, main = "Tempo de garrote", ylab = "minutos", xlab = "Desfecho")
+boxplot(dados_num$Tempo ~ ATB, main = "Tempo de garrote", ylab = "minutos", xlab = "Tratamento")
 ```
 
 ```{r grafico ptn, echo = F}
-boxplot(ptn ~ Desfecho, main = "Proteína total", ylab = "unidade", xlab = "Desfecho")
+boxplot(ptn ~ ATB, main = "Proteína total", ylab = "unidade", xlab = "Tratamento")
 ```
 
 
@@ -174,18 +175,20 @@ barplot(atb_desfecho, beside = T, legend.text = rownames(atb_desfecho), xlab = "
 ```
 
 
-#### Outros dados, por desfecho
+#### Outros dados, por tratamento
 
 ```{r graficos categoricos, echo = F}
 par(mfrow = c(2,2))
-barplot(diag_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diagnóstico")
-barplot(dm_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Diabete")
-barplot(sexo_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por Sexo")
-barplot(asa_desfecho, beside = T, legend.text = rownames(atb_desfecho), main = "Desfecho por ASA")
+barplot(diag_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diagnostico por tratamento")
+barplot(dm_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Diabete por tratamento")
+barplot(sexo_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "Sexo por tratamento")
+barplot(asa_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "ASA por tratamento")
 ```
 
 
 ## Análise de Regressão
+
+### Modelos de uma variável
 
 Foi feita uma análise de regressão logística, tomando como variável resposta o Desfecho (binário). Cada modelo de regressão logística simples considerou como variável preditora cada um dos seguintes dados:
 
@@ -197,7 +200,9 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 - Proteína total
 - Diagnóstico
 
-**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados. Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+A **única** análise que retornou diferença significativa foi levando em conta o sexo.
+
+~~**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados.~~ Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
 A regressão logística foi avaliada pelo teste de Wald.
 
 ```{r modelos de regressao, echo = F}
@@ -210,6 +215,17 @@ modelo.desfecho.ptn <- glm(Desfecho ~ ptn, family = binomial(link = "logit"))
 modelo.desfecho.diag <- glm(Desfecho ~ Diagnóstico, family = binomial(link = "logit"))
 ```
 
+O log da razão de chances de se selecionar um homem ao invés de uma mulher na amostra é: `r modelo.desfecho.sexo$coefficients[2]`. Usando a exponencial para cancelar o lograritmo, podemos interpretar este resultado como: os homens tem uma chance `r exp(modelo.desfecho.sexo$coefficients[2])` maior que as mulheres de ter o desfecho [infecção na cirurgia, etc].
+
+**Sugestão de redação**: *Dos fatores de risco analisados neste estudo, o único identificado como significativo foi o sexo. Nesta amostra, os homens têm uma chance `r exp(modelo.desfecho.sexo$coefficients[2])` maior que as mulheres de desenvolver a condição...*
+
+
+A seguir, as tabelas de resultados das regressões logísticas analisadas.
+
+
+
+
+
 ```{r sumarios regressao, echo = F}
 summary(modelo.desfecho.atb)
 summary(modelo.desfecho.diab)
@@ -221,3 +237,8 @@ summary(modelo.desfecho.diag)
 
 ```
 
+### Modelo com todas as variáveis
+
+Por fim, foi criado também um modelo logístico para o desfecho tendo como preditores **todas** as outras variáveis do estudo (resultado não mostrado). Neste modelo "saturado", as combinações não resultaram em significância estatística das chances de uma categoria para outra.
+
+Sugestão: este resultado pode ser omitido da redação sem perda de generalidade, e foi incluído apenas para compleição da análise.

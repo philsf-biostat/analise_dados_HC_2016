@@ -4,26 +4,26 @@
 
     ATB
 Sexo   N   S
-   F 133 100
+   F 131 100
    M  25  28
 
     ATB
 Sexo    N    S
-   F 46.5 35.0
-   M  8.7  9.8
+   F 46.1 35.2
+   M  8.8  9.9
 
 ## ASA por tratamento
 
      ATB
 ASA     N   S
   I     8   8
-  II  143 118
+  II  142 118
   III   5   1
 
      ATB
 ASA      N    S
   I    2.8  2.8
-  II  50.5 41.7
+  II  50.4 41.8
   III  1.8  0.4
 
 ## Diabete por tratamento
@@ -31,26 +31,26 @@ ASA      N    S
    ATB
 DM    N   S
   N 122 102
-  S  36  26
+  S  34  26
 
    ATB
 DM     N    S
-  N 42.7 35.7
-  S 12.6  9.1
+  N 43.0 35.9
+  S 12.0  9.2
 
 ## Diagnostico por tratamento
 
            ATB
 Diagnóstico   N   S
      AR      25  25
-     OA     131 101
+     OA     129 101
      ON       0   2
      Outros   2   0
 
            ATB
 Diagnóstico    N    S
-     AR      8.7  8.7
-     OA     45.8 35.3
+     AR      8.8  8.8
+     OA     45.4 35.6
      ON      0.0  0.7
      Outros  0.7  0.0
 
@@ -58,10 +58,10 @@ Diagnóstico    N    S
 
    Desfecho
 ATB   N   S
-  N 153   5
+  N 153   3
   S 126   2
 
    Desfecho
 ATB    N    S
-  N 53.5  1.7
-  S 44.1  0.7
+  N 53.9  1.1
+  S 44.4  0.7
