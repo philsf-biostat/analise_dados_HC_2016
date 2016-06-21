@@ -1,7 +1,7 @@
 ---
 title: "Relatório Hugo Cobra (INTO 2016)"
 author: "Felipe Figueiredo"
-date: "February 17, 2016"
+date: "June 21, 2016"
 output:
   html_document:
     keep_md: yes
