@@ -20,12 +20,12 @@ hist(dados_num$Idade, main = "Idade", ylab = "Frequencia", xlab = "Idade (anos)"
 hist(dados_num$Tempo, main = "Tempo de garrote", ylab = "Frequencia", xlab = "Minutos")
 hist(ptn, main = "Proteína total", ylab = "Frequencia", xlab = "Albumina + Globulina (unidade)")
 
-## Gráficos por desfecho ####
-boxplot(dados_num$Idade ~ dados_fat$Desfecho, main = "Idade", ylab = "Anos", xlab = "Desfecho")
-boxplot(dados_num$Tempo ~ dados_fat$Desfecho, main = "Tempo de garrote", ylab = "minutos", xlab = "Desfecho")
+## Gráficos por Tratamento ####
+boxplot(dados_num$Idade ~ dados_fat$ATB, main = "Idade", ylab = "Anos", xlab = "Tratamento")
+boxplot(dados_num$Tempo ~ dados_fat$ATB, main = "Tempo de garrote", ylab = "minutos", xlab = "Tratamento")
 # boxplot(dados_num$Albumina ~ dados_fat$Desfecho, main = "Albumina", ylab = "unidade", xlab = "Desfecho")
 # boxplot(dados_num$Globulina ~ dados_fat$Desfecho, main = "Globulina", ylab = "unidade", xlab = "Desfecho")
-boxplot(ptn ~ dados_fat$Desfecho, main = "Proteína total", ylab = "unidade", xlab = "Desfecho")
+boxplot(ptn ~ dados_fat$ATB, main = "Proteína total", ylab = "unidade", xlab = "Tratamento")
 
 # 
 # dotchart(dados_num$Idade, main = "Idade", ylab = "Anos")

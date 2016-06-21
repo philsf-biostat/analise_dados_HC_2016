@@ -1,0 +1,76 @@
+---
+title: "Regressão"
+author: "Felipe Figueiredo"
+date: "April, 2016"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Resultados (brutos)
+
+## Modelos de regressão
+
+```{r dados, echo = FALSE}
+dados_num <- read.table("../dataset/dadosnum.dat")
+ptn <- dados_num$Albumina + dados_num$Globulina
+dados_fat <- read.table("../dataset/dadosfat.dat")
+attach(dados_num)
+attach(dados_fat)
+```
+
+```{r modelos, echo = F}
+modelo.desfecho.atb <- glm(Desfecho ~ ATB, family = binomial(link = "logit"))
+modelo.desfecho.diab <- glm(Desfecho ~ DM, family = binomial(link = "logit"))
+modelo.desfecho.sexo <- glm(Desfecho ~ Sexo, family = binomial(link = "logit"))
+modelo.desfecho.idade <- glm(Desfecho ~ Idade, family = binomial(link = "logit"))
+modelo.desfecho.imc <- glm(Desfecho ~ IMC, family = binomial(link = "logit"))
+modelo.desfecho.ptn <- glm(Desfecho ~ ptn, family = binomial(link = "logit"))
+modelo.desfecho.diag <- glm(Desfecho ~ Diagnóstico, family = binomial(link = "logit"))
+```
+
+
+### Desfecho por tratamento
+
+```{r atb, echo = F}
+summary(modelo.desfecho.atb)
+```
+
+### Desfecho por Diabete
+
+```{r dm, echo = F}
+summary(modelo.desfecho.diab)
+```
+
+### Desfecho por Sexo
+
+```{r sexo, echo = F}
+summary(modelo.desfecho.sexo)
+```
+
+### Desfecho por Idade
+
+```{r idade, echo = F}
+summary(modelo.desfecho.idade)
+```
+
+### Desfecho por IMC
+
+```{r imc, echo = F}
+summary(modelo.desfecho.imc)
+```
+
+### Desfecho por proteína total
+
+```{r ptn, echo = F}
+summary(modelo.desfecho.ptn)
+```
+
+### Desfecho por diagnóstico
+
+```{r diag, echo = F}
+summary(modelo.desfecho.diag)
+```

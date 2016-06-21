@@ -13,3 +13,6 @@ summary(modelo.desfecho.idade)
 summary(modelo.desfecho.imc)
 summary(modelo.desfecho.ptn)
 summary(modelo.desfecho.diag)
+
+modelo.desfecho.full <- glm(Desfecho ~ ATB + DM + Sexo + Idade + IMC + ptn + Diagnóstico, family = binomial(link = "logit"))
+summary(modelo.desfecho.full)
