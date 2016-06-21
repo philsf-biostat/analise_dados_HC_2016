@@ -1,6 +1,6 @@
 # Relatório Hugo Cobra (INTO 2016)
 Felipe Figueiredo  
-February 17, 2016  
+June 21, 2016  
 
 
 
@@ -12,6 +12,10 @@ Ao longo do texto, as variáveis normais foram sumarizadas como média +/- desvi
 Foi aplicado o teste de normalidade de Shapiro-Wilks nas variáveis numéricas.
 A comparação das variáveis basais e finais foi feita com o teste t para variáveis normalmente distribuídas, e com o teste de Mann-Whitney para variáveis que tiveram a hipótese de normalidade rejeitada.
 Para variáveis normais, foi aplicada a correlação de Pearson, e para variáveis não normais, a correlação não paramétrica de Spearman.
+
+A fim de investigar possíveis fatores de risco para o desfecho, foram ajustados modelos de regressão logística, tendo o desfecho como variável resposta.
+A significância global de cada um destes modelos foi avaliada pelo teste de Wald.
+
 Em todas as análises, foi adotada a significância de 5%.
 As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.0 (https://www.R-project.org).
 
@@ -44,13 +48,13 @@ A média (DP) das idades é 66.19 (9.25)
 ---------------------------------------------------
  ATB   Sexo   Diagnóstico   DM     ASA    Desfecho 
 ----- ------ ------------- ----- ------- ----------
-N:158 F:233     AR : 50    N:224 I : 16    N:279   
+N:156 F:231     AR : 50    N:224 I : 16    N:279   
 
-S:128 M: 53     OA :232    S: 62 II :261    S: 7   
+S:128 M: 53     OA :230    S: 60 II :260    S: 5   
 
  NA     NA      ON : 2      NA   III : 6     NA    
 
- NA     NA     Outros: 2    NA   NA's: 3     NA    
+ NA     NA     Outros: 2    NA   NA's: 2     NA    
 ---------------------------------------------------
 
 
@@ -63,54 +67,74 @@ S:128 M: 53     OA :232    S: 62 II :261    S: 7
 As tabelas de contingência a seguir, associam duas variáveis categóricas. Nas estão representadas as categorias do Desfecho (S = infeccção e N = não infeccão). OS p-valores correspondem ao teste de Fisher.
 
 
-### Desfecho por sexo
+### Sexo por tratamento
+
+
+-----------------
+&nbsp;   N    S  
+------- ---- ----
+ **F**  46.1 35.2
+
+ **M**  8.8  9.9 
+-----------------
+
+
+
+P-valor: 0.2235331
+
+
+### Diabete por tratamento
 
 
 ----------------
-&nbsp;   N    S 
-------- ---- ---
- **F**  80.1 1.4
+&nbsp;   N   S  
+------- --- ----
+ **N**  43  35.9
 
- **M**  17.5  1 
+ **S**  12  9.2 
 ----------------
 
 
 
-P-valor: 0.1212122
-
-### Desfecho por Diabete
+P-valor: 0.7725722
 
 
-----------------
-&nbsp;   N    S 
-------- ---- ---
- **N**  76.6 1.7
-
- **S**   21  0.7
-----------------
+### Diagnostico por tratamento
 
 
+----------------------
+   &nbsp;     N    S  
+------------ ---- ----
+   **AR**    8.8  8.8 
 
-P-valor: 0.6474461
+   **OA**    45.4 35.6
 
-### Desfecho por Diagnóstico
+   **ON**     0   0.7 
 
-
----------------------
-   &nbsp;     N    S 
------------- ---- ---
-   **AR**    16.8 0.7
-
-   **OA**    79.4 1.7
-
-   **ON**    0.7   0 
-
- **Outros**  0.7   0 
----------------------
+ **Outros**  0.7   0  
+----------------------
 
 
 
-P-valor: 0.6482267
+P-valor: 0.210475
+
+
+### ASA por Tratamento
+
+
+-------------------
+ &nbsp;    N    S  
+--------- ---- ----
+  **I**   2.8  2.8 
+
+ **II**   50.4 41.8
+
+ **III**  1.8  0.4 
+-------------------
+
+
+
+P-valor: 0.3976111
 
 
 ### Desfecho por Tratamento
@@ -119,14 +143,14 @@ P-valor: 0.6482267
 ----------------
 &nbsp;   N    S 
 ------- ---- ---
- **N**  53.5 1.7
+ **N**  53.9 1.1
 
- **S**  44.1 0.7
+ **S**  44.4 0.7
 ----------------
 
 
 
-P-valor: 0.4656048
+P-valor: 1
 
 
 ### Desfecho por ASA
@@ -137,7 +161,7 @@ P-valor: 0.4656048
 --------- ---- ---
   **I**   5.7   0 
 
- **II**   90.5 1.8
+ **II**   90.8 1.4
 
  **III**  2.1   0 
 ------------------
@@ -147,50 +171,33 @@ P-valor: 0.4656048
 P-valor: 1
 
 
-### ASA por Tratamento
-
-Adicionalmente, foi testada a associação entre o tratamento e o escore ASA.
-
-
--------------------
- &nbsp;    N    S  
---------- ---- ----
-  **I**   2.8  2.8 
-
- **II**   50.5 41.7
-
- **III**  1.8  0.4 
--------------------
-
-
-
-P-valor: 0.3971435
-
 
 ## Gráficos
 
 ### Dados numéricos
 
-![](analise_dados_HC_2016_files/figure-html/gráficos idade-1.png)\
+![](analise_dados_HC_2016_files/figure-html/gráficos idade-1.png)<!-- -->
 
-![](analise_dados_HC_2016_files/figure-html/grafico tempo-1.png)\
+![](analise_dados_HC_2016_files/figure-html/grafico tempo-1.png)<!-- -->
 
-![](analise_dados_HC_2016_files/figure-html/grafico ptn-1.png)\
+![](analise_dados_HC_2016_files/figure-html/grafico ptn-1.png)<!-- -->
 
 
 ### Dados categóricos
 
 #### Desfecho por tratamento
 
-![](analise_dados_HC_2016_files/figure-html/grafico tratamento-1.png)\
+![](analise_dados_HC_2016_files/figure-html/grafico tratamento-1.png)<!-- -->
 
 
-#### Outros dados, por desfecho
+#### Outros dados, por tratamento
 
-![](analise_dados_HC_2016_files/figure-html/graficos categoricos-1.png)\
+![](analise_dados_HC_2016_files/figure-html/graficos categoricos-1.png)<!-- -->
 
 
 ## Análise de Regressão
+
+### Modelos de uma variável
 
 Foi feita uma análise de regressão logística, tomando como variável resposta o Desfecho (binário). Cada modelo de regressão logística simples considerou como variável preditora cada um dos seguintes dados:
 
@@ -202,7 +209,21 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 - Proteína total
 - Diagnóstico
 
-**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados. Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+A **única** análise que retornou diferença significativa foi levando em conta o sexo.
+
+~~**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados.~~ Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+A regressão logística foi avaliada pelo teste de Wald.
+
+
+
+O log da razão de chances de se selecionar um homem ao invés de uma mulher na amostra é: 1.9271641. Usando a exponencial para cancelar o lograritmo, podemos interpretar este resultado como: os homens tem uma chance 6.87 maior que as mulheres de ter o desfecho [infecção na cirurgia, etc].
+
+**Sugestão de redação**: *Dos fatores de risco analisados neste estudo, o único identificado como significativo foi o sexo. Nesta amostra, os homens têm uma chance 6.87 maior que as mulheres de desenvolver a condição...*
+
+
+A seguir, as tabelas de resultados das regressões logísticas analisadas.
+
+
 
 
 
@@ -214,20 +235,20 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.2536  -0.2536  -0.2536  -0.1775   2.8840  
+## -0.1971  -0.1971  -0.1971  -0.1775   2.8840  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -3.4210     0.4545  -7.528 5.17e-14 ***
-## ATBS         -0.7221     0.8453  -0.854    0.393    
+## (Intercept)  -3.9318     0.5830  -6.744 1.54e-11 ***
+## ATBS         -0.2113     0.9208  -0.229    0.818    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.768  on 285  degrees of freedom
-## Residual deviance: 64.976  on 284  degrees of freedom
-## AIC: 68.976
+##     Null deviance: 50.307  on 283  degrees of freedom
+## Residual deviance: 50.254  on 282  degrees of freedom
+## AIC: 54.254
 ## 
 ## Number of Fisher Scoring iterations: 7
 ```
@@ -239,22 +260,22 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.2561  -0.2125  -0.2125  -0.2125   2.7576  
+## -0.2125  -0.2125  -0.2125  -0.2125   2.7576  
 ## 
 ## Coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -3.7796     0.4523  -8.357   <2e-16 ***
-## DMS           0.3784     0.8492   0.446    0.656    
+##              Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)   -3.7796     0.4523  -8.357   <2e-16 ***
+## DMS          -16.7864  2288.9810  -0.007    0.994    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.768  on 285  degrees of freedom
-## Residual deviance: 65.580  on 284  degrees of freedom
-## AIC: 69.58
+##     Null deviance: 50.307  on 283  degrees of freedom
+## Residual deviance: 47.910  on 282  degrees of freedom
+## AIC: 51.91
 ## 
-## Number of Fisher Scoring iterations: 6
+## Number of Fisher Scoring iterations: 19
 ```
 
 ```
@@ -264,22 +285,22 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.3414  -0.1861  -0.1861  -0.1861   2.8512  
+## -0.3414  -0.1319  -0.1319  -0.1319   3.0820  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -4.0474     0.5043  -8.026    1e-15 ***
-## SexoM         1.2340     0.7795   1.583    0.113    
+## (Intercept)  -4.7406     0.7102  -6.675 2.47e-11 ***
+## SexoM         1.9272     0.9261   2.081   0.0374 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.768  on 285  degrees of freedom
-## Residual deviance: 63.506  on 284  degrees of freedom
-## AIC: 67.506
+##     Null deviance: 50.307  on 283  degrees of freedom
+## Residual deviance: 46.037  on 282  degrees of freedom
+## AIC: 50.037
 ## 
-## Number of Fisher Scoring iterations: 6
+## Number of Fisher Scoring iterations: 7
 ```
 
 ```
@@ -289,20 +310,20 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.4623  -0.2387  -0.2096  -0.1839   2.9340  
+## -0.3160  -0.1998  -0.1827  -0.1671   2.9757  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)
-## (Intercept) -0.86477    2.21554  -0.390    0.696
-## Idade       -0.04392    0.03517  -1.249    0.212
+## (Intercept) -2.06966    2.78453  -0.743    0.457
+## Idade       -0.03007    0.04329  -0.695    0.487
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.768  on 285  degrees of freedom
-## Residual deviance: 64.362  on 284  degrees of freedom
-## AIC: 68.362
+##     Null deviance: 50.307  on 283  degrees of freedom
+## Residual deviance: 49.861  on 282  degrees of freedom
+## AIC: 53.861
 ## 
-## Number of Fisher Scoring iterations: 6
+## Number of Fisher Scoring iterations: 7
 ```
 
 ```
@@ -312,23 +333,23 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.3127  -0.2378  -0.2187  -0.2014   2.8632  
+## -0.2587  -0.2010  -0.1863  -0.1724   2.9647  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)  
-## (Intercept) -5.09163    2.17668  -2.339   0.0193 *
-## IMC          0.04673    0.06824   0.685   0.4935  
+## (Intercept) -5.31048    2.55216  -2.081   0.0375 *
+## IMC          0.04298    0.08024   0.536   0.5922  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.366  on 277  degrees of freedom
-## Residual deviance: 64.905  on 276  degrees of freedom
+##     Null deviance: 50.018  on 275  degrees of freedom
+## Residual deviance: 49.737  on 274  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 68.905
+## AIC: 53.737
 ## 
-## Number of Fisher Scoring iterations: 6
+## Number of Fisher Scoring iterations: 7
 ```
 
 ```
@@ -337,22 +358,22 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## glm(formula = Desfecho ~ ptn, family = binomial(link = "logit"))
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -0.1911  -0.1816  -0.1785  -0.1754   2.8920  
+##      Min        1Q    Median        3Q       Max  
+## -0.26855  -0.14210  -0.11422  -0.09179   3.14577  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)
-## (Intercept) -3.86084    2.90163  -1.331    0.183
-## ptn         -0.04243    0.45714  -0.093    0.926
+## (Intercept)  -1.6253     3.7617  -0.432    0.666
+## ptn          -0.5348     0.6530  -0.819    0.413
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 41.081  on 251  degrees of freedom
-## Residual deviance: 41.073  on 250  degrees of freedom
+##     Null deviance: 23.297  on 249  degrees of freedom
+## Residual deviance: 22.609  on 248  degrees of freedom
 ##   (34 observations deleted due to missingness)
-## AIC: 45.073
+## AIC: 26.609
 ## 
-## Number of Fisher Scoring iterations: 7
+## Number of Fisher Scoring iterations: 8
 ```
 
 ```
@@ -362,12 +383,12 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.2857  -0.2087  -0.2087  -0.2087   2.7703  
+## -0.2857  -0.1620  -0.1620  -0.1620   2.9460  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error z value Pr(>|z|)    
 ## (Intercept)         -3.1781     0.7217  -4.404 1.06e-05 ***
-## DiagnósticoOA       -0.6375     0.8516  -0.749    0.454    
+## DiagnósticoOA       -1.1483     0.9266  -1.239    0.215    
 ## DiagnósticoON      -14.3880  2797.4420  -0.005    0.996    
 ## DiagnósticoOutros  -14.3880  2797.4420  -0.005    0.996    
 ## ---
@@ -375,10 +396,15 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 65.768  on 285  degrees of freedom
-## Residual deviance: 65.059  on 282  degrees of freedom
-## AIC: 73.059
+##     Null deviance: 50.307  on 283  degrees of freedom
+## Residual deviance: 48.792  on 280  degrees of freedom
+## AIC: 56.792
 ## 
 ## Number of Fisher Scoring iterations: 16
 ```
 
+### Modelo com todas as variáveis
+
+Por fim, foi criado também um modelo logístico para o desfecho tendo como preditores **todas** as outras variáveis do estudo (resultado não mostrado). Neste modelo "saturado", as combinações não resultaram em significância estatística das chances de uma categoria para outra.
+
+Sugestão: este resultado pode ser omitido da redação sem perda de generalidade, e foi incluído apenas para compleição da análise.
