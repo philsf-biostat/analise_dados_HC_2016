@@ -217,6 +217,9 @@ modelo.desfecho.diag <- glm(Desfecho ~ Diagnóstico, family = binomial(link = "l
 
 O log da razão de chances de se selecionar um homem ao invés de uma mulher na amostra é: `r modelo.desfecho.sexo$coefficients[2]`. Usando a exponencial para cancelar o lograritmo, podemos interpretar este resultado como: os homens tem uma chance `r exp(modelo.desfecho.sexo$coefficients[2])` maior que as mulheres de ter o desfecho [infecção na cirurgia, etc].
 
+**Sugestão de redação**: *Dos fatores de risco analisados neste estudo, o único identificado como significativo foi o sexo. Nesta amostra, os homens têm uma chance `r exp(modelo.desfecho.sexo$coefficients[2])` maior que as mulheres de desenvolver a condição...*
+
+
 A seguir, as tabelas de resultados das regressões logísticas analisadas.
 
 
