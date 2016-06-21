@@ -20,8 +20,8 @@ Todas as informações descritas abaixo estão sumarizadas no relatório. Este i
 - [Relatório (formato Word)][]
 
 [Relatório]: relatorio/analise_dados_HC_2016.md
-[Relatório (formato Word)]: relatorio/analise_dados_HC_2016.docx
-[Relatório (formato PDF)]: relatorio/analise_dados_HC_2016.pdf
+[Relatório (formato Word)]: relatorio/raw/analise_dados_HC_2016.docx
+[Relatório (formato PDF)]: relatorio/raw/analise_dados_HC_2016.pdf
 
 ## Resultados brutos ##
 
