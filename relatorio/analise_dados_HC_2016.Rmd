@@ -188,6 +188,8 @@ barplot(asa_atb, beside = T, legend.text = c("Sem ATB", "Com ATB"), main = "ASA 
 
 ## Análise de Regressão
 
+### Modelos de uma variável
+
 Foi feita uma análise de regressão logística, tomando como variável resposta o Desfecho (binário). Cada modelo de regressão logística simples considerou como variável preditora cada um dos seguintes dados:
 
 - Tratamento
@@ -234,3 +236,8 @@ summary(modelo.desfecho.diag)
 
 ```
 
+### Modelo com todas as variáveis
+
+Por fim, foi criado também um modelo logístico para o desfecho tendo como preditores **todas** as outras variáveis do estudo (resultado não mostrado). Neste modelo "saturado", as combinações não resultaram em significância estatística das chances de uma categoria para outra.
+
+Sugestão: este resultado pode ser omitido da redação sem perda de generalidade, e foi incluído apenas para compleição da análise.
