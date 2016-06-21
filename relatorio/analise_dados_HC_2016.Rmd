@@ -202,10 +202,8 @@ Foi feita uma análise de regressão logística, tomando como variável resposta
 
 A **única** análise que retornou diferença significativa foi levando em conta o sexo.
 
-~~**Nenhum** dos modelos ajustados~~ foi considerado significativo ao nível de 5% para estes dados. Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
+~~**Nenhum** dos modelos ajustados foi considerado significativo ao nível de 5% para estes dados.~~ Por conta disso, apenas o resultado bruto de cada teste está sendo apresentado, sem formatação.
 A regressão logística foi avaliada pelo teste de Wald.
-
-
 
 ```{r modelos de regressao, echo = F}
 modelo.desfecho.atb <- glm(Desfecho ~ ATB, family = binomial(link = "logit"))
