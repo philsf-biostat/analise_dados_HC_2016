@@ -20,8 +20,8 @@ Todas as informações descritas abaixo estão sumarizadas no relatório. Este i
 - [Relatório (formato Word)][]
 
 [Relatório]: relatorio/analise_dados_HC_2016.md
-[Relatório (formato Word)]: raw/relatorio/analise_dados_HC_2016.docx
-[Relatório (formato PDF)]: raw/relatorio/analise_dados_HC_2016.pdf
+[Relatório (formato Word)]: relatorio/analise_dados_HC_2016.docx?raw=true
+[Relatório (formato PDF)]: relatorio/analise_dados_HC_2016.pdf?raw=true
 
 ## Resultados brutos ##
 
@@ -34,7 +34,7 @@ Sumário das estatísticas descritivas das variáveis.
 * ~~[descricao.txt][] ([download][download-desc-txt])~~
 
 [descricao.txt]: resultados/descricoes.md
-[download-desc-txt]: resultados/descricoes.txt
+[download-desc-txt]: resultados/descricoes.txt?raw=true
 
 ### Tabelas de contingência ###
 
@@ -51,7 +51,7 @@ p-valores do teste de normalidade das variáveis numéricas
 - [normalidade][] ([download][download-norm-txt])
 
 [normalidade]: resultados/normalidade.md
-[download-norm-txt]: resultados/normalidade.txt
+[download-norm-txt]: resultados/normalidade.txt?raw=true
 
 ### Testes de significância ###
 
@@ -59,9 +59,9 @@ p-valores do teste de normalidade das variáveis numéricas
 - ~~[Significância por desfecho][] ([download][download-dif-desf-txt])~~
 
 [Significância por desfecho]: resultados/diferencas-desfecho.md
-[download-dif-desf-txt]: resultados/diferencas-desfecho.txt
+[download-dif-desf-txt]: resultados/diferencas-desfecho.txt?raw=true
 [Significância por tratamento]: resultados/diferencas-tratamento.md
-[download-dif-trat-txt]: resultados/diferencas-tratamento.txt
+[download-dif-trat-txt]: resultados/diferencas-tratamento.txt?raw=true
 
 ### Figuras ###
 
@@ -72,7 +72,7 @@ Figuras descritivas das variáveis.
 - [Proteína total por tratamento][]
 - [Dados categóricos por tratamento][]
 
-[Dados numéricos por desfecho]: figuras/bd-desfecho.png
-[Dados numéricos por tratamento]: figuras/bd-tratamento.png
-[Proteína total por tratamento]: figuras/ptn-tratamento.png
-[Dados categóricos por tratamento]: figuras/bp-tratamento.png
+[Dados numéricos por desfecho]: figuras/bd-desfecho.png?raw=true
+[Dados numéricos por tratamento]: figuras/bd-tratamento.png?raw=true
+[Proteína total por tratamento]: figuras/ptn-tratamento.png?raw=true
+[Dados categóricos por tratamento]: figuras/bp-tratamento.png?raw=true
