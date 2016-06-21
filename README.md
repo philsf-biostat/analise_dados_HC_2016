@@ -15,7 +15,7 @@ Para baixar todos os resultados em um único arquivo ZIP, veja o(s) link(s) abai
 
 Todas as informações descritas abaixo estão sumarizadas no relatório. Este inclui uma sugestão de texto descrevendo a metodologia, e sugestões resumidas de descrição sintética dos resultados analisados.
 
-- [Relatório][]
+- [Relatório][] (neste link - apenas o texto, sem as figuras)
 - [Relatório (formato PDF)][]
 - [Relatório (formato Word)][]
 
